@@ -8,7 +8,7 @@ import android.widget.TextView
 
 import com.example.admin.weatherchallenge.R
 
-class RVCityAdapter(private var cityList: List<String>, private val listener: OnItemClickListener) : RecyclerView.Adapter<RVCityAdapter.ViewHolder>() {
+class RVCityAdapter(private val cityList: List<String>, private val listener: (String) -> Unit) : RecyclerView.Adapter<RVCityAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.city_list_item, parent, false)
@@ -34,8 +34,8 @@ class RVCityAdapter(private var cityList: List<String>, private val listener: On
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         internal var tvCity: TextView = itemView.findViewById(R.id.tvCity)
 
-        fun bind(city: String, listener: OnItemClickListener) {
-            itemView.setOnClickListener { listener.onItemClick(city) }
+        fun bind(city: String, clickListener: (String) -> Unit) {
+            itemView.setOnClickListener { clickListener(city) }
         }
     }
 }

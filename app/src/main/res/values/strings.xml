@@ -2,4 +2,7 @@
     <string name="app_name">WeatherChallenge</string>
     <string name="please_select_a_city">Please select a city</string>
     <string name="current">Current</string>
+    <string name="degrees">°C</string>
+    <string name="humidity">HUMIDITY</string>
+    <string name="wind_speed">WIND SPEED</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.AdapterView
 import android.widget.Toast
 import com.example.admin.weatherchallenge.R
 import com.example.admin.weatherchallenge.adapter.RVCityAdapter
@@ -21,13 +22,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     //region Events
     override fun onGetAvailableCities(availableCities: List<String>) {
         val layoutManager = LinearLayoutManager(this)
-        val adapter = RVCityAdapter(availableCities, RVCityAdapter.OnItemClickListener {
-            //presenter!!.getWeather(it)
-
-            var intent:Intent = Intent(applicationContext, WeatherActivity::class.java)
-            intent.putExtra(Constant.KEY_CITY_ID, "")
-            startActivity(intent)
-        })
+        val adapter = RVCityAdapter(availableCities) { city: String -> cityClicked(city)}
 
         rvCities!!.layoutManager = layoutManager
         rvCities!!.adapter = adapter
@@ -64,4 +59,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private fun Context.toast(message: CharSequence) =
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     //endregion
+
+    private fun cityClicked(city : String) {
+        var intent:Intent = Intent(applicationContext, WeatherActivity::class.java)
+        intent.putExtra(Constant.KEY_CITY_ID, city)
+        startActivity(intent)
+    }
 }

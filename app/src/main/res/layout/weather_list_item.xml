@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/llContent"
-        android:layout_width="wrap_content"
+        style="@style/Weather_Container"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/current" />
-
-        <TextView
-            android:id="@+id/tvCurrentTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
             android:id="@+id/tvState"
+            style="@style/Weather_Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvTemperature"
+            style="@style/Weather_Temperature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvHumidity"
+            style="@style/Weather_Content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvWindSpeed"
+            style="@style/Weather_Content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -43,9 +38,10 @@
 
     <ImageView
         android:id="@+id/ivState"
-        android:layout_toRightOf="@id/llContent"
         android:layout_width="wrap_content"
-        android:layout_height="120dp" />
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/llContent"
+        android:paddingTop="10dp" />
 
 
     <View

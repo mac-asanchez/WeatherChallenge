@@ -8,4 +8,31 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="City_Container">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="City_Item">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="Weather_Container">
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="Weather_Title">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Weather_Temperature">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="Weather_Content">
+        <item name="android:textSize">14dp</item>
+    </style>
+
 </resources>
