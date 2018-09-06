@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeatherChallenge</string>
+    <string name="please_select_a_city">Please select a city</string>
+    <string name="current">Current</string>
+</resources>
