@@ -10,12 +10,11 @@ class WeatherPresenter(private val dataRepository: DataRepository) : WeatherCont
     private var view: WeatherContract.View? = null
 
     override fun getWeather(city: String) {
-        Log.d(TAG, "getWeather: $city")
         dataRepository.getWeather(city, object : WeatherCallback {
 
-            override fun onRemoteResponse(weatherResponseList: List<WeatherResponse>) {
-                Log.d(TAG, "onRemoteResponse: " + weatherResponseList.size)
-                view!!.onGetWeather(weatherResponseList)
+            override fun onRemoteResponse(weatherResponse: List<WeatherResponse>) {
+                Log.d(TAG, "onInfoResponse: " + weatherResponse.size)
+                view!!.onGetWeather(weatherResponse)
             }
 
             override fun onRemoteFailure(error: String) {

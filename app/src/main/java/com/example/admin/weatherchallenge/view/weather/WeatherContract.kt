@@ -6,7 +6,7 @@ import com.example.admin.weatherchallenge.view.base.BaseView
 
 interface WeatherContract {
     interface View : BaseView {
-        fun onGetWeather(weather: List<WeatherResponse>)
+        fun onGetWeather(weatherResponseList: List<WeatherResponse>)
     }
 
     interface Presenter : BasePresenter<View> {

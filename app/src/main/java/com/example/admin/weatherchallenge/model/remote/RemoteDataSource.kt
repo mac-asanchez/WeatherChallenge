@@ -26,7 +26,7 @@ class RemoteDataSource {
     }
 
     fun getWeatherFromNetwork(cityId: String, date: String): Observable<List<WeatherResponse>> {
-        Log.d(TAG, "getCityInfoFromNetwork: ")
+        Log.d(TAG, "getWeatherFromNetwork: ")
         return createInstance().create(RemoteService::class.java).getWeather(cityId, date)
     }
 

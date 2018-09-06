@@ -51,4 +51,13 @@ class WeatherResponse {
     @Expose
     var predictability: Int? = null
 
+    constructor(id: Long, weatherStateName: String?, weatherStateAbbr: String?, applicableDate: String?, theTemp: Double?, windSpeed: Double?, humidity: Int?) {
+        this.id = id
+        this.weatherStateName = weatherStateName
+        this.weatherStateAbbr = weatherStateAbbr
+        this.applicableDate = applicableDate
+        this.theTemp = theTemp
+        this.windSpeed = windSpeed
+        this.humidity = humidity
+    }
 }

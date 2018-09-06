@@ -11,6 +11,7 @@ import com.example.admin.weatherchallenge.adapter.RVCityAdapter
 import com.example.admin.weatherchallenge.adapter.RVWeatherAdapter
 import com.example.admin.weatherchallenge.manager.DataRepository
 import com.example.admin.weatherchallenge.model.entity.WeatherResponse
+import com.example.admin.weatherchallenge.model.local.ForecastDataSource
 import com.example.admin.weatherchallenge.model.remote.RemoteDataSource
 import com.example.admin.weatherchallenge.utils.Constant
 import com.example.admin.weatherchallenge.view.main.MainPresenter
@@ -41,7 +42,7 @@ class WeatherActivity : AppCompatActivity(), WeatherContract.View {
 
         cityId = intent.getStringExtra(Constant.KEY_CITY_ID)
 
-        presenter = WeatherPresenter(DataRepository(RemoteDataSource()))
+        presenter = WeatherPresenter(DataRepository(RemoteDataSource(), ForecastDataSource(this)))
         rvWeather = findViewById(R.id.rvWeather)
     }
 

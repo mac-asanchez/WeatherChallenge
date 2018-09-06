@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.admin.weatherchallenge.R
 import com.example.admin.weatherchallenge.adapter.RVCityAdapter
 import com.example.admin.weatherchallenge.manager.DataRepository
+import com.example.admin.weatherchallenge.model.local.ForecastDataSource
 import com.example.admin.weatherchallenge.model.remote.RemoteDataSource
 import com.example.admin.weatherchallenge.utils.Constant
 import com.example.admin.weatherchallenge.view.weather.WeatherActivity
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        presenter = MainPresenter(DataRepository(RemoteDataSource()))
+        presenter = MainPresenter(DataRepository(RemoteDataSource(), ForecastDataSource(this)))
         rvCities = findViewById(R.id.rvCities)
     }
 

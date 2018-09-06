@@ -29,13 +29,6 @@ class RVWeatherAdapter(internal var context: Context, private val weatherRespons
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val weather = weatherResponseList[position]
 
-        //region Get Date
-        val calendar = Calendar.getInstance()
-        val today = calendar.time
-        @SuppressLint("SimpleDateFormat") val dateFormat = SimpleDateFormat("hh:mm")
-        val date = dateFormat.format(today)
-        //endregion
-
         holder.tvState.text = weather.weatherStateName
         holder.tvTemperature.text = Math.round(weather.theTemp!!).toString() + context.getString(R.string.degrees)
         holder.tvHumidity.text = context.getString(R.string.humidity) + " " + weather.humidity.toString() + "%"
